@@ -1,150 +1,301 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+.page{min-height:100vh;background:var(--cream)}
 
-  --text-primary: #000;
-  --text-secondary: #666;
+.navbar{
+  width:100%;height:48px;display:flex;align-items:stretch;
+  background:var(--cream);border-bottom:1px solid var(--border)
+}
+.logo{
+  width:110px;display:flex;align-items:center;justify-content:center;
+  color:var(--dark);font-size:7px;font-weight:700
+}
+.logo span{color:var(--pink)}
+.nav{flex:1;display:flex}
+.nav a{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  border-left:1px solid var(--border);color:var(--dark);
+  font-size:8px;text-decoration:none;transition:.2s
+}
+.nav a:hover{background:#fff1a8}
+.icons{
+  width:100px;display:flex;align-items:center;justify-content:center;gap:18px
+}
+.icons span{color:var(--pink);font-size:14px}
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+/* HERO */
+.hero{
+  width:100%;
+  height:430px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:#fffdf5;
+  border-bottom:1px solid var(--border)
+}
+.heroContent{
+  min-height:430px;background:var(--pink);
+  padding:60px clamp(25px,5vw,70px);
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start
+}
+.heroContent h1{
+  margin:0 0 28px;color:var(--dark);
+  font-size:clamp(32px,4vw,58px);line-height:1.05;
+  font-weight:800;letter-spacing:-1.5px
+}
+.heroContent p{
+  max-width:430px;margin:0 0 30px;color:var(--dark);
+  font-size:clamp(8px,.75vw,11px);line-height:1.7
+}
+.menuButton{
+  width:clamp(130px,16vw,180px);height:32px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--white);border:1px solid #eee6d8;
+  box-shadow:5px 4px 0 #fff1a8;color:var(--dark);
+  font-size:9px;text-decoration:none
+}
+.heroImage{
+  width:100%;height:430px;background:var(--cream);
+  overflow:hidden;display:flex;align-items:center;justify-content:center
+}
+.heroImage img{
+  width:100%;height:100%;max-width:100%;max-height:100%;
+  object-fit:contain;object-position:center
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+/* DONUTS */
+.donutsSection{width:100%;padding:75px 5.7% 90px;background:var(--cream)}
+.donutsHeader{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:50px
+}
+.donutsTitle{display:flex;align-items:flex-start;gap:70px}
+.donutsTitle h2{
+  margin:0;font-size:clamp(42px,4.5vw,68px);
+  line-height:1.02;font-weight:400;letter-spacing:-2px
+}
+.deliveryBadge{
+  width:135px;height:58px;margin-top:12px;padding:10px 15px;
+  display:flex;align-items:center;justify-content:center;
+  background:#fff1a8;font-size:9px;line-height:1.25;
+  font-weight:500;text-align:center;transform:rotate(-6deg);
+  clip-path:polygon(
+    5% 18%,16% 5%,29% 13%,42% 2%,56% 12%,70% 4%,86% 16%,
+    98% 9%,94% 29%,100% 45%,91% 59%,98% 76%,83% 79%,72% 97%,
+    57% 88%,42% 98%,29% 88%,15% 96%,7% 78%,0 63%,8% 47%,1% 31%
+  )
+}
+.seeAll{
+  margin-bottom:8px;color:var(--dark);font-size:16px;
+  text-decoration:underline;text-underline-offset:5px
+}
+.donutsGrid{display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
+.donutImage{position:relative;width:100%;height:320px;padding:20px}
+.donutImage img{object-fit:contain;object-position:center}
+.donutInfo{position:relative;min-height:150px;padding:5px 18px 22px}
+.donutTop{
+  display:flex;justify-content:space-between;align-items:center;
+  width:100%;gap:10px;margin-bottom:22px
+}
+.donutTop h3{margin:0;font-size:15px;line-height:1.15;font-weight:600}
+.donutTop span{
+  margin:auto;flex-shrink:0;color:#e58ab8;font-size:21px;font-weight:500
+}
+.donutInfo p{
+  max-width:175px;margin:0;font-size:14px;line-height:1.65;
+  text-transform:uppercase
+}
+.addButton{
+  position:absolute;right:18px;top:58px;width:43px;height:43px;
+  border:1px solid #d4d0c6;background:transparent;color:#c5beb2;
+  font-size:25px;font-weight:300;cursor:pointer;
+  display:flex;align-items:center;justify-content:center
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+/* CUSTOM */
+.customSection{width:100%;padding:80px 5.7% 90px;background:var(--cream)}
+.customHeader{
+  width:100%;margin-bottom:55px;
+  display:flex;align-items:flex-start;justify-content:space-between
+}
+.customHeader h2{
+  margin:0;color:var(--dark);font-size:clamp(48px,5vw,72px);
+  line-height:1.02;font-weight:400;letter-spacing:-3px
+}
+.customHeader p{
+  width:35%;margin:65px 0 0;color:var(--dark);
+  font-size:9px;line-height:1.7;text-transform:uppercase
+}
+.customHeader p::before{
+  content:"IMPORTANT NOTE!";width:180px;height:42px;
+  margin:-55px 0 25px -10px;
+  display:flex;align-items:center;justify-content:center;
+  background:#fff1a8;color:var(--dark);font-size:9px;font-weight:500;
+  clip-path:polygon(
+    5% 25%,16% 8%,29% 16%,42% 4%,56% 14%,70% 5%,86% 17%,
+    98% 10%,94% 31%,100% 48%,91% 62%,97% 79%,82% 81%,72% 97%,
+    57% 88%,42% 98%,29% 88%,15% 96%,7% 78%,0 63%,8% 47%,1% 31%
+  )
+}
+.customContent{
+  width:72%;height:330px;border:1px solid var(--border);
+  background:var(--cream);overflow:hidden
+}
+.customOptions{width:100%;height:100%;display:grid}
+.customOption{
+  width:100%;height:82px;display:grid;
+  grid-template-columns:45% 55%;border-bottom:1px solid var(--border)
+}
+.customOption:last-child{border-bottom:none}
+.customOption label{
+  display:flex;align-items:center;justify-content:center;
+  border-right:1px solid var(--border);color:var(--dark);
+  font-size:13px;font-weight:600
+}
+.customOption select{
+  width:100%;height:100%;padding:0 78px 0 20px;
+  border:0;border-radius:0;background:var(--cream);
+  background-image:linear-gradient(
+    to right,transparent 0,transparent calc(100% - 78px),
+    var(--pink) calc(100% - 78px),var(--pink) 100%
+  );
+  color:var(--dark);font-size:11px;text-align:center;
+  outline:0;cursor:pointer
+}
+.customPreview,.customDonutShape,.customAddButton{display:none}
+
+/* CONFIRMATION */
+.confirmation{
+  position:fixed;inset:0;display:flex;align-items:center;
+  justify-content:center;background:rgba(81,77,84,.18);z-index:100
+}
+.confirmationBox{
+  width:630px;min-height:330px;padding:55px 50px 45px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--cream);border:1px solid var(--border);
+  box-shadow:10px 10px 0 #fff1a8;text-align:center
+}
+.confirmationMessage{
+  margin:0 0 40px;color:var(--dark);
+  font-size:16px;line-height:1.8;text-transform:uppercase
+}
+.confirmationBox button{
+  width:175px;height:60px;border:1px solid #d4d0c6;
+  background:#fff1a8;color:var(--dark);font-size:14px;cursor:pointer;
+  transition:.2s
+}
+.confirmationBox button:hover{background:var(--pink)}
+
+/* TABLET */
+@media(max-width:1200px){
+  .hero,.heroContent,.heroImage{min-height:390px}
+  .heroContent{padding:45px clamp(25px,4vw,55px)}
+  .heroContent h1{font-size:clamp(32px,4vw,48px)}
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--button-secondary-border);
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+@media(max-width:768px){
+  .hero,.heroContent,.heroImage{min-height:340px}
+  .heroContent{padding:30px 24px}
+  .heroContent h1{
+    margin-bottom:20px;font-size:clamp(27px,5vw,38px);letter-spacing:-1px
   }
+  .heroContent p{margin-bottom:22px;font-size:7px;line-height:1.65}
+  .menuButton{width:125px;height:27px;font-size:8px}
+  
+  .donutsSection{padding:50px 4% 60px}
+  .donutsHeader{margin-bottom:35px}
+  .donutsTitle{gap:30px}
+  .donutsTitle h2{font-size:clamp(34px,6vw,50px)}
+  .deliveryBadge{width:110px;height:48px;margin-top:8px;font-size:7px}
+  .seeAll{font-size:12px}
+  .donutsGrid{grid-template-columns:repeat(2,1fr)}
+  .donutImage{height:260px;padding:14px}
+  .donutInfo{min-height:130px;padding:5px 14px 18px}
+  .donutTop h3{font-size:13px}
+  .donutTop span{font-size:18px}
+  .donutInfo p{font-size:11px}
+  .addButton{right:14px;top:52px;width:38px;height:38px;font-size:22px}
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .customSection{padding:55px 4% 65px}
+  .customHeader{margin-bottom:35px}
+  .customHeader h2{font-size:45px;letter-spacing:-2px}
+  .customHeader p{width:38%;margin-top:40px;font-size:7px}
+  .customHeader p::before{
+    width:125px;height:30px;margin:-38px 0 16px -5px;font-size:6px
+  }
+  .customContent{width:78%;height:268px}
+  .customOption{height:67px}
+  .customOption label{font-size:9px}
+  .customOption select{padding:0 55px 0 10px;font-size:8px}
+  
+  .customOption select{
+    background-image:linear-gradient(
+      to right,transparent 0,transparent calc(100% - 55px),
+      var(--pink) calc(100% - 55px),var(--pink) 100%
+    )
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+/* MOBILE */
+@media(max-width:480px){
+  .hero{height:220px;min-height:220px;grid-template-columns:52% 48%}
+  .heroContent{
+    height:220px;min-height:220px;padding:20px 14px;
+    box-sizing:border-box;overflow:hidden
   }
-
-  .intro {
-    gap: 16px;
+  .heroContent h1{
+    margin:0 0 10px;max-width:130px;font-size:24px;
+    line-height:1.05;letter-spacing:-.5px
   }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+  .heroContent p{
+    width:100%;max-width:125px;margin:0 0 14px;
+    font-size:6.5px;line-height:1.5
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+  .menuButton{
+    width:90px;height:23px;flex-shrink:0;
+    box-shadow:3px 3px 0 #fff1a8;font-size:7px
   }
+  .heroImage{height:220px;min-height:220px;padding:0;box-sizing:border-box}
+  .heroImage img{width:90%!important;height:90%!important}
 
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .confirmation{padding:15px}
+  .confirmationBox{
+    width:90%;min-height:190px;padding:30px 20px 25px;
+    box-shadow:6px 6px 0 #fff1a8
   }
-}
+  .confirmationMessage{margin-bottom:25px;font-size:8px;line-height:1.7}
+  .confirmationBox button{width:90px;height:34px;font-size:8px}
 
-.code {
-  font-family: var(--font-geist-mono);
-  font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
-  border-radius: 6px;
+  .donutsSection{padding:40px 12px 50px}
+  .donutsHeader{margin-bottom:25px;align-items:flex-end}
+  .donutsTitle{gap:12px}
+  .donutsTitle h2{font-size:30px;letter-spacing:-1px}
+  .deliveryBadge{
+    width:72px;height:34px;margin-top:4px;padding:6px 8px;font-size:5.5px
+  }
+  .seeAll{margin-bottom:3px;font-size:8px;text-underline-offset:3px}
+  .donutsGrid{grid-template-columns:repeat(2,1fr)}
+  .donutImage{height:145px;padding:7px}
+  .donutInfo{min-height:88px;padding:6px 7px 10px}
+  .donutTop{gap:4px;margin-bottom:8px}
+  .donutTop h3{max-width:65px;font-size:8px;line-height:1.15}
+  .donutTop span{font-size:10px}
+  .donutInfo p{max-width:75px;font-size:6px;line-height:1.4}
+  .addButton{right:6px;top:45px;width:24px;height:24px;font-size:15px}
+
+  .customSection{padding:40px 12px 50px}
+  .customHeader{margin-bottom:25px}
+  .customHeader h2{font-size:29px;letter-spacing:-1px}
+  .customHeader p{width:38%;margin-top:27px;font-size:5px;line-height:1.5}
+  .customHeader p::before{
+    width:75px;height:20px;margin:-25px 0 10px -3px;font-size:4px
+  }
+  .customContent{width:100%;height:208px}
+  .customOption{height:52px;min-height:52px}
+  .customOption label{font-size:6px}
+  .customOption select{
+    min-width:0;padding:0 35px 0 5px;font-size:5px;
+    background-image:linear-gradient(
+      to right,transparent 0,transparent calc(100% - 35px),
+      var(--pink) calc(100% - 35px),var(--pink) 100%
+    )
+  }
+  .customPreview,.customDonutShape,.customAddButton{display:none!important}
 }

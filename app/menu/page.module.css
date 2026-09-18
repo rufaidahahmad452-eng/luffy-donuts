@@ -1,0 +1,493 @@
+.page {
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--dark);
+}
+.navbar {
+  width: 100%;
+  height: 90px;
+  padding: 0 5.7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--cream);
+}
+.logo {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+.logo span {
+  font-weight: 400;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.nav a {
+  text-decoration: none;
+}
+.nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.menuHeader {
+  padding: 55px 5.7% 65px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.menuHeader h1 {
+  margin: 0;
+  font-size: clamp(50px, 7vw, 95px);
+  line-height: 0.9;
+  font-weight: 400;
+  letter-spacing: -4px;
+}
+.menuHeader p {
+  margin: 0 8% 5px 0;
+  font-size: 13px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.donutsGrid {
+  width: 100%;
+  padding: 0 5.7% 90px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.donutCard {
+  position: relative;
+  border: 1px solid #d4d0c6;
+  background: var(--cream);
+  overflow: hidden;
+}
+.donutImage {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  padding: 20px;
+}
+.donutImage img {
+  object-fit: contain !important;
+  object-position: center !important;
+}
+.donutInfo {
+  position: relative;
+  min-height: 150px;
+  padding: 5px 18px 22px;
+}
+.donutTop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.donutTop h2 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.15;
+  font-weight: 600;
+}
+.donutTop span {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: #e58ab8;
+  font-size: 21px;
+  font-weight: 500;
+}
+.donutInfo p {
+  max-width: 175px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  text-transform: uppercase;
+}
+.addButton {
+  position: absolute;
+  right: 18px;
+  top: 58px;
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d4d0c6;
+  background: transparent;
+  color: #c5beb2;
+  font-size: 25px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.addButton:hover {
+  background: #fff1a8;
+  color: var(--dark);
+}
+
+.confirmation {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(81, 77, 84, 0.25);
+  z-index: 100;
+}
+.confirmationBox {
+  width: 320px;
+  padding: 35px 30px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  text-align: center;
+  box-shadow: 6px 6px 0 #fff1a8;
+}
+.confirmationBox h2 {
+  margin: 0 0 18px;
+  font-size: 25px;
+  font-weight: 500;
+}
+.confirmationBox p{
+  margin: 0 0 25px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.confirmationBox button {
+  width: 100px;
+  height: 35px;
+  border: 1px solid var(--dark);
+  background: #fff1a8;
+  color: var(--dark);
+  font-size: 11px;
+  cursor: pointer;
+}
+.orderSection {
+  width: 100%;
+  padding: 70px 5.7% 90px;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+}
+
+.orderSection h2 {
+  margin: 0 0 35px;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.emptyOrder {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.orderList {
+  width: 100%;
+}
+
+.orderItem {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 40px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.orderItem h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.orderItem p {
+  margin: 0;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.quantity button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--dark);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.quantity span {
+  min-width: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.itemTotal {
+  min-width: 60px;
+  color: #e58ab8;
+  font-size: 16px;
+  text-align: right;
+}
+
+.orderBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.orderBottom strong {
+  color: #e58ab8;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.placeOrderButton {
+  width: 180px;
+  height: 40px;
+  margin-top: 30px;
+  border: 1px solid var(--dark);
+  background: #fff1a8;
+  color: var(--dark);
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.customerInfo {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.customerInfo input, .customerInfo select {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--dark);
+  font-size: 11px;
+  outline: none;
+}
+
+.customerInfo input::placeholder {
+  color: #aaa39a;
+}
+
+.customerInfo input:focus, .customerInfo select:focus {
+  border-color: var(--dark);
+}
+
+.customerInfo select {
+  cursor: pointer;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .menuHeader {
+    padding: 45px 4% 55px;
+  }
+
+  .donutsGrid {
+    padding: 0 4% 70px;
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .donutImage {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 40px;
+    padding: 0 12px;
+  }
+
+  .logo {
+    font-size: 8px;
+    letter-spacing: -0.3px;
+  }
+  .nav {
+    gap: 14px;
+  }
+  .nav a {
+    font-size: 7px;
+  }
+  .menuHeader {
+    padding: 28px 14px 25px;
+    gap: 10px;
+  }
+
+  .menuHeader h1 {
+    font-size: 30px;
+    letter-spacing: -1.5px;
+    line-height: 0.95;
+  }
+
+  .menuHeader p {
+    font-size: 7px;
+    line-height: 1.45;
+  }
+
+  .donutsGrid {
+    padding: 0 10px 40px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+  .donutCard {
+    border-width: 1px;
+  }
+  .donutImage {
+    height: 125px;
+    padding: 5px;
+  }
+  .donutInfo {
+    min-height: 92px;
+    padding: 7px 7px 10px;
+  }
+  .donutTop {
+    gap: 3px;
+    margin-bottom: 7px;
+  }
+  .donutTop h2 {
+    max-width: 65px;
+    font-size: 8px;
+    line-height: 1.15;
+  }
+  .donutTop span {
+    font-size: 10px;
+  }
+  .donutInfo p {
+    max-width: 70px;
+    font-size: 6px;
+    line-height: 1.4;
+  }
+  .addButton {
+    right: 6px;
+    top: 47px;
+    width: 24px;
+    height: 24px;
+    font-size: 15px;
+  }
+
+  .orderSection {
+    padding: 32px 14px 45px;
+  }
+  .orderSection h2 {
+    margin-bottom: 18px;
+    font-size: 23px;
+  }
+
+  .emptyOrder {
+    font-size: 7px;
+  }
+
+  .orderItem {
+    gap: 9px;
+    padding: 14px 0;
+  }
+
+  .orderItem h3 {
+    margin-bottom: 4px;
+    font-size: 9px;
+  }
+
+  .orderItem p {
+    font-size: 7px;
+  }
+
+  .quantity {
+    gap: 7px;
+  }
+
+  .quantity button {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+
+  .quantity span {
+    min-width: 12px;
+    font-size: 10px;
+  }
+
+  .itemTotal {
+    min-width: 35px;
+    font-size: 11px;
+  }
+
+  .orderBottom {
+    margin-top: 18px;
+    font-size: 9px;
+  }
+
+  .orderBottom strong {
+    font-size: 16px;
+  }
+
+  .placeOrderButton {
+    width: 100%;
+    height: 36px;
+    margin-top: 18px;
+    font-size: 8px;
+  }
+
+  .confirmation {
+    padding: 15px;
+  }
+
+  .confirmationBox {
+    width: 100%;
+    max-width: 270px;
+    padding: 24px 16px;
+  }
+
+  .confirmationBox h2 {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+
+  .confirmationBox p {
+    margin-bottom: 18px;
+    font-size: 8px;
+  }
+
+  .confirmationBox button {
+    width: 75px;
+    height: 30px;
+    font-size: 8px;
+  }
+  .customerInfo {
+  max-width: 100%;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.customerInfo input, .customerInfo select {
+  height: 34px;
+  padding: 0 9px;
+  font-size: 8px;
+}
+}
