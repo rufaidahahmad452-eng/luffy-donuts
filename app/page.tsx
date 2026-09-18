@@ -93,7 +93,7 @@ export default function Home() {
             <Link href="/menu" className={styles.menuButton}>MENU</Link>
         </div>
         <div className={styles.heroImage}>
-          <Image src="/images/herro-donuts.jpeg" alt="Luffy Dounts" fill priority quality={100}/>
+          <Image src="/images/herro-donuts.jpeg" alt="Luffy Dounts" fill priority quality={100} sizes="50vw" style={{ objectFit: "contain" , pointerEvents: "none"}}/>
         </div>
       </section>
       <section className={styles.donutsSection}>
