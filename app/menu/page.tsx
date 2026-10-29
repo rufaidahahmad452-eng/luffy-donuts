@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState ,useEffect } from "react";
 import styles from "./page.module.css";
 import { donuts } from "../data/donuts";
+import ScrollReveal from "../ScrollReveal";
 
 type OrderItem = { id: number; quantity: number; };
 
@@ -98,6 +99,7 @@ export default function Menu() {
 
       <section className={styles.donutsGrid}>
         {donuts.map((donut) => (
+          <ScrollReveal key={donut.id}>
           <article key={donut.id} className={styles.donutCard}>
             <div className={styles.donutImage}>
               <Image src={donut.image} alt={donut.name} fill quality={100}
@@ -114,6 +116,7 @@ export default function Menu() {
               <button type="button" className={styles.addButton} onClick={() => addToOrder(donut.id)} >+</button>
             </div>
           </article>
+        </ScrollReveal>  
         ))}
       </section>
 
